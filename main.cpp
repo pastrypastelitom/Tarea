@@ -1,45 +1,40 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <iostream>
-
-
-
-float base;
-
-float altura;
-
-float resultado;
-
-
-
 using namespace std;
 
+int main() {
+    int numeros[10];
+    int maximo, minimo;
+    float suma = 0, promedio;
 
+    cout << "Ingresa 10 números:\n";
 
-int main(){
+    // Leer los 10 números y acumular la suma
+    for (int i = 0; i < 10; i++) {
+        cin >> numeros[i];
+        suma += numeros[i];
+    }
 
-cout << "Ingrese la base del triangulo: ";
+    // Inicializar máximo y mínimo con el primer número
+    maximo = numeros[0];
+    minimo = numeros[0];
 
-cin >> base; // el programa guardara el numero ingresado
+    // Buscar máximo y mínimo
+    for (int i = 1; i < 10; i++) {
+        if (numeros[i] > maximo) {
+            maximo = numeros[i];
+        }
+        if (numeros[i] < minimo) {
+            minimo = numeros[i];
+        }
+    }
 
-cout << "Ingrese la altura del triangulo: ";//la altura es un modulo que usara el programa para calcular el area pñara calc
+    // Calcular el promedio
+    promedio = suma / 10;
 
-cin >> altura; //el programa guardara la altura
+    // Mostrar resultados
+    cout << "El número máximo es: " << maximo << endl;
+    cout << "El número mínimo es: " << minimo << endl;
+    cout << "El promedio es: " << promedio << endl;
 
-resultado=(base*altura)/2;// esta es la formula del area 
-
-cout << "El area de su triangulo es: " << resultado << endl; // el programa mostrara el resultado=area
-
-
-
-cin.ignore(); //esto hace que el programa ignore ciertas entradas
-
-cin.get(); 
-
+    return 0;
 }

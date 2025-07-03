@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Ingrese un número entero positivo: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "El número debe ser positivo.\n";
+        return 1;
+    }
+
+    cout << "\nPatrón de asteriscos:\n\n";
+
+    for (int fila = 1; fila <= n; fila++) {
+        for (int col = 1; col <= n; col++) {
+            if ((fila + col) <= (n + 1)) {
+                cout << "* ";
+            } else {
+                cout << "  ";  // espacios para mantener la forma
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}

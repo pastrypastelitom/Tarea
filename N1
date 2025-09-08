@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int obtenerLongitud(const string& cadena) {
+    return static_cast<int>(cadena.size());
+}
+
+int main() {
+    string cadena;
+    cout << "Ingrese una cadena: ";
+    getline(cin, cadena);
+
+    cout << "Longitud: " << obtenerLongitud(cadena) << endl;
+    return 0;
+}
